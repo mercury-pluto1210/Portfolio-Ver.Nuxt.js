@@ -1,56 +1,113 @@
 <template>
-  <div class="menu">
-    <div class="menu-back">
-      <p class="back"><i class="fas fa-angle-double-right back"></i></p>
+  <div>
+    <div class="menu-bars">
+      <button @click="openDrawerMenu" v-if="closeMenuBar" class="bars-text">MENU</button>
     </div>
-    <div class="menu-contents">
-      <ul class="menu-lists">
-        <li class="menu-list"><nuxt-link to="/Home" class="menu-text">Home</nuxt-link></li>
-        <li class="menu-list"><nuxt-link to="/About" class="menu-text">About</nuxt-link></li>
-        <li class="menu-list"><nuxt-link to="/Portfolio" class="menu-text">Portfolio</nuxt-link></li>
-        <li class="menu-list"><nuxt-link to="/Contact" class="menu-text">Contact</nuxt-link></li>
-      </ul>
-    </div>
-    <div class="menu-icons">
-      <a href="https://twitter.com/SaitoYuto5" class="twitter"><i class="fab fa-twitter twitter"></i></a>
-      <i class="fas fa-heart heart"></i>
-      <a href="https://github.com/mercury-pluto1210?tab=repositories" class="github"><i class="fab fa-github github"></i></a>
-    </div>
-    <div class="like-contents">
-      <p class="like-text">like!</p>
-      <p class="like-text">Thank you</p>
-    </div>
+    <div v-click-outside="close" @click="close"></div>
+    <transition name="right">
+      <div v-if="drawerFlg" class="drawer-menu-wrapper">
+        <div class="menu">
+          <div class="menu-contents">
+            <ul class="menu-lists">
+              <li class="menu-list"><nuxt-link to="/Home" class="menu-text">Home</nuxt-link></li>
+              <li class="menu-list"><nuxt-link to="/About" class="menu-text">About</nuxt-link></li>
+              <li class="menu-list"><nuxt-link to="/Portfolio" class="menu-text">Portfolio</nuxt-link></li>
+              <li class="menu-list"><nuxt-link to="/Contact" class="menu-text">Contact</nuxt-link></li>
+            </ul>
+          </div>
+          <div class="menu-icons">
+            <a href="https://twitter.com/SaitoYuto5" class="twitter"><i class="fab fa-twitter twitter"></i></a>
+            <!-- <i class="fas fa-heart heart"></i> -->
+            <a href="https://github.com/mercury-pluto1210?tab=repositories" class="github"><i class="fab fa-github github"></i></a>
+          </div>
+          <!-- ハートをクリックしたらアクションが起こるコンテンツ実装予定 -->
+          <!-- <div class="like-contents">
+            <p class="like-text">like!</p>
+            <p class="like-text">Thank you</p>
+          </div> -->
+        </div>
+      </div>
+    </transition>
   </div>
+
 </template>
 
 <script>
-export default {
+import ClickOutside from 'vue-click-outside'
 
+export default {
+  data() {
+    return {
+      drawerFlg: false,
+      closeMenuBar: true
+    };
+  },
+  methods: {
+    openDrawerMenu: function() {
+      this.drawerFlg = !this.drawerFlg;
+      this.closeMenuBar = false
+    },
+    close: function(){
+      this.drawerFlg = false
+      this.closeMenuBar = true
+    }
+  },
+  mounted () {
+    this.popupItem = this.$el
+  },
+  directives: {
+    ClickOutside
+  }
 }
 </script>
 
 <style>
-.menu{
-  position: fixed;
-  top:0;
-  right:-23%;
-  background-color: #000;
+.display{
+  width: 100%;
   height: 100vh;
-  width: 23%;
-  margin-left: auto;
+}
+
+.right-enter-active, .right-leave-active {
+  transform: translate(0px, 0px);
+  transition: transform 1s cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.right-enter, .right-leave-to {
+  transform: translateX(23vw) translateX(0px);
+}
+
+.bars-text{
+  border: solid 2px #fff;
+  color: #fff;
+  font-size: 20px;
+  display: inline-block;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 20px 100px;
+  background-color: rgba(102, 101, 101, 0.7);
+  cursor: pointer;
+  position: fixed;
+  top: 40%;
+  right: 0.5%;
+  z-index: 5;
+}
+
+.bars-text:hover{
+  background-color: rgba(102, 101, 101, 1.0);
+}
+
+.menu-bars{
+  text-align: right;
+}
+
+.drawer-menu-wrapper {
+  position: absolute;
   z-index: 10;
-}
-
-.menu-back{
-  padding: 10px;
-}
-
-.back{
-  width: 30px;
-}
-
-.fa-angle-double-right{
-  color: rgb(255, 255, 255);
+  top: 0;
+  right: 0;
+  width: 23%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  position: fixed;
 }
 
 .menu-contents{
@@ -111,41 +168,4 @@ export default {
   cursor: pointer;
 }
 
-@keyframes liking {
-  0% {
-    transform: scale(0.5);
-  }
-  10% {
-    transform: scale(0.7);
-  }
-  30% {
-    transform: scale(0.9);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  80% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1.0);
-  }
-}
-
-.like{
-  color: rgb(255, 0, 170);
-  animation: liking .2s;
-}
-
-.like-contents{
-  display: none;
-  padding-top: 10px;
-}
-
-.like-text{
-  color: rgb(255, 251, 0);
-  font-family: 'Bangers', cursive;
-  letter-spacing: 2px;
-  text-align: center;
-}
 </style>

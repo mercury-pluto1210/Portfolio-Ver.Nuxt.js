@@ -1,7 +1,7 @@
 <template>
   <div class="loading">
     <h1 class="loading-text"><i>Hello World</i></h1>
-    <img src="~assets/loading/puff.svg" class="loading-img">
+    <img src="../assets/loading/puff.svg" class="loading-img">
   </div>
 </template>
 

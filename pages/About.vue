@@ -2,15 +2,13 @@
   <div>
     <Menu />
       <div class="about">
-        <Menubars />
         <h1 class="about-title"><i>About</i></h1>
         <div class="about-main">
           <div class="about-name">
-            <h2 class="about-name-English">Yuto Saito</h2>
-            <p class="about-name-Japanese">斉藤 勇人</p>
-          </div>
-          <div class="slogan">
-            <p>Towards the Future</p>
+            <div class="about-name-display">
+              <h2 class="about-name-English">Yuto Saito</h2>
+              <p class="about-name-Japanese">斉藤 勇人</p>
+            </div>
           </div>
           <div class="text-style">
             <div class="about-history">
@@ -34,12 +32,10 @@
 
 <script>
 import Menu from '~/components/Menu.vue'
-import Menubars from '~/components/Menu-bars.vue'
 
 export default {
   components: {
     Menu,
-    Menubars
   },
 
   data (){
@@ -57,57 +53,55 @@ export default {
 <style>
 .about{
   background-attachment: fixed;
-  background-image: url(~assets/img/PC-on-table1.jpg);
+  background-image: url(~assets/img/PC-on-table.jpg);
   background-size: cover;
   height: 100%;
   color: #fff;
-  position: relative;
 }
 
 .about-title{
   font-family: 'Caveat', cursive;
   text-align: center;
-  font-size: 150px;
+  font-size: calc(30px + 8vw);
   color: rgb(161, 150, 150);
-  position: relative;
   top: 80px;
-  z-index: 10;
+  z-index: 1;
   letter-spacing: 8px;
 }
 
 .about-main{
   background: #000;
-  height: 1000px;
+  height: 120vh;
   opacity: 0.9;
+  padding-top: 2em;
 }
 
 .about-name{
   background-color: rgb(43, 42, 42);
-  display: inline-block;
-  margin: 8% 0 8% 2%;
-  padding: 40px 12% 40px 20%;
+  margin: 2em 2%;
   letter-spacing: 5px;
+  height: 15vw;
+  width: 50vw;
+  position: relative;
+}
+
+.about-name-display{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
 }
 
 .about-name-English{
-  font-size: 50px;
-  padding-bottom: 5px;
+  font-size: calc(5px + 3vw);
   font-family: 'Economica', sans-serif;
 }
 
 .about-name-Japanese{
-  font-size: 20px;
-  text-align: center;
+  font-size: calc(5px + 1vw);
   font-family: 'Sawarabi Gothic', sans-serif;
-}
-
-.slogan{
-  position: absolute;
-  left: 43%;
-  top: 30%;
-  font-size: 30px;
-  font-family: 'Homemade Apple', cursive;
-  opacity: 0.7;
+  text-align: center;
 }
 
 .text-style{
@@ -118,16 +112,17 @@ export default {
 }
 
 .about-history-title{
-  font-size: 50px;
+  font-size: calc(30px + 2vw);
 }
 
 .history-table{
   text-align: left;
-  padding-top: 20px;
+  padding: 1em 10% 0 10%;
   line-height: 2em;
   margin: 0 auto;
   border-collapse: separate;
   border-spacing: 30px 0;
+  font-size: calc(12px + 0.5vw);;
 }
 
 .history-day{
@@ -135,11 +130,12 @@ export default {
 }
 
 .about-skill-title{
-  font-size: 50px;
+  font-size: calc(30px + 2vw);
   padding-top: 100px;
 }
 
 .skill-text{
-  padding-top: 20px;
+  padding: 1em 10% 0 10%;
+  font-size: calc(12px + 0.5vw);
 }
 </style>

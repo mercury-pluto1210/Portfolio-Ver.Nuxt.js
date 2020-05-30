@@ -1,7 +1,6 @@
 <template>
   <div>
     <Menu />
-    <Menubars />
     <div class="portfolio">
       <h1 class="portfolio-title">Portfolio</h1>
       <div class="my-page">
@@ -17,12 +16,10 @@
 
 <script>
 import Menu from '~/components/Menu.vue'
-import Menubars from '~/components/Menu-bars.vue'
 
 export default {
   components: {
     Menu,
-    Menubars,
   }
 }
 </script>
@@ -39,7 +36,7 @@ export default {
 }
 
 .portfolio-title{
-  font-size: 150px;
+  font-size: calc(30px + 8vw);
   font-family: 'Caveat', cursive;
 }
 
@@ -73,7 +70,7 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2em;
+  font-size: calc(20px + 1vw);
   font-family: 'Lato', 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN',
   'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   letter-spacing: 3px;
@@ -83,7 +80,7 @@ export default {
 
 .continue{
   padding-top: 5%;
-  font-size: 2em;
+  font-size: calc(20px + 1vw);
   font-family: 'Lato', 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN',
   'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   letter-spacing: 3px;

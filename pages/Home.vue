@@ -2,22 +2,19 @@
   <div>
     <div class="home">
       <h1 class="home-text">To the Future</h1>
-      <Menubars />
+      <Menu />
     </div>
-    <Menu />
   </div>
 </template>
 
 <script>
 import Loading from '~/components/Loading.vue'
 import Menu from '~/components/Menu.vue'
-import Menubars from '~/components/Menu-bars.vue'
 
 export default {
   components: {
     Loading,
     Menu,
-    Menubars
   }
 }
 </script>
@@ -25,7 +22,7 @@ export default {
 <style>
 .home{
   position: relative;
-  background-image: url(~assets/img/PC-on-table1.jpg);
+  background-image: url(~assets/img/PC-on-table.jpg);
   background-size: cover;
   height: 100vh;
 }
@@ -41,6 +38,6 @@ export default {
   margin:0;
   padding:0;
   font-family: 'Homemade Apple', cursive;
-  font-size: 70px;
+  font-size: calc(30px + 2vw);
 }
 </style>
