@@ -8,12 +8,10 @@
 </template>
 
 <script>
-import Loading from '~/components/Loading.vue'
 import Menu from '~/components/Menu.vue'
 
 export default {
   components: {
-    Loading,
     Menu,
   }
 }
