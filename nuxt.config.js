@@ -39,6 +39,7 @@ export default {
   */
   css: [
     '@/assets/css/stylesheet.css',
+    '@/assets/css/responsive.css',
   ],
   /*
   ** Plugins to load before mounting the App

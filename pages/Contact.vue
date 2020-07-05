@@ -52,11 +52,11 @@ export default {
   border-color: rgb(255, 255, 255);
   outline: none;
   background: rgba(0, 0, 0, 0);
-  height: 40px;
+  height: 10vh;
   font-size: calc(12px + 0.5vw);;
   font-weight: 400;
   display: block;
-  margin: 5% auto 0 auto;
+  margin: 20px auto 0 auto;
   width: 50%;
   color: #fff;
   font-family: 'Lato', 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN',
@@ -72,11 +72,11 @@ export default {
   background: rgba(0, 0, 0, 0);
   resize: none;
   width: 50%;
-  height: 20vh;
+  height: 30vh;
   font-size: calc(12px + 0.5vw);;
   font-weight: 400;
   display: block;
-  margin: 3% auto 0 auto;
+  margin: 20px auto 0 auto;
   color: #fff;
   font-family: 'Lato', 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN',
   'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
@@ -107,5 +107,15 @@ export default {
 .submit:hover{
   background-color: #fff;
   color: #000;
+}
+
+@media screen and (max-width: 640px) {
+  .con{
+    width: 80%;
+  }
+
+  .main-text{
+    width: 80%;
+  }
 }
 </style>

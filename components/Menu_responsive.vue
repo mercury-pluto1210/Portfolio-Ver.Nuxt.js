@@ -1,10 +1,9 @@
 <template>
-<div>
-  <div class="allMenu">
-    <div class="menu-bars">
-      <button v-on:click="openDrawerMenu" v-if="closeMenuBar" class="bars-text">MENU</button>
+  <div>
+    <div class="menu-button">
+      <i class="fas fa-align-justify" v-on:click="openDrawerMenu"></i>
     </div>
-    <div v-click-outside="close" v-on:click="close"></div>
+    <div v-click-outside="close" @click="close"></div>
     <transition name="right">
       <div v-if="drawerFlg" class="drawer-menu-wrapper">
         <div class="menu">
@@ -31,37 +30,6 @@
     </transition>
   </div>
 
-  <div class="allMenu-responsive">
-    <div class="menu-button">
-      <i class="fas fa-align-justify" v-on:click="openDrawerMenu"></i>
-    </div>
-    <div v-click-outside="close" v-on:click="close"></div>
-    <transition name="right">
-      <div v-if="drawerFlg" class="drawer-menu-wrapper">
-        <div class="menu">
-          <div class="menu-contents">
-            <ul class="menu-lists">
-              <li class="menu-list"><nuxt-link to="/Home" class="menu-text">Home</nuxt-link></li>
-              <li class="menu-list"><nuxt-link to="/About" class="menu-text">About</nuxt-link></li>
-              <li class="menu-list"><nuxt-link to="/Portfolio" class="menu-text">Portfolio</nuxt-link></li>
-              <li class="menu-list"><nuxt-link to="/Contact" class="menu-text">Contact</nuxt-link></li>
-            </ul>
-          </div>
-          <div class="menu-icons">
-            <a href="https://twitter.com/SaitoYuto5" class="twitter"><i class="fab fa-twitter twitter"></i></a>
-            <!-- <i class="fas fa-heart heart"></i> -->
-            <a href="https://github.com/mercury-pluto1210?tab=repositories" class="github"><i class="fab fa-github github"></i></a>
-          </div>
-          <!-- ハートをクリックしたらアクションが起こるコンテンツ実装予定 -->
-          <!-- <div class="like-contents">
-            <p class="like-text">like!</p>
-            <p class="like-text">Thank you</p>
-          </div> -->
-        </div>
-      </div>
-    </transition>
-  </div>
-</div>
 </template>
 
 <script>
@@ -105,17 +73,11 @@ export default {
 }
 
 .right-enter, .right-leave-to {
-  transform: translateX(23vw) translateX(0px);
+  transform: translateX(200px) translateX(0px);
 }
 
-.bars-text{
-  border: solid 2px #fff;
-  color: #fff;
-  font-size: 20px;
+.menu-button{
   display: inline-block;
-  font-family: 'Roboto Condensed', sans-serif;
-  padding: 20px 100px;
-  background-color: rgba(102, 101, 101, 0.7);
   cursor: pointer;
   position: fixed;
   top: 40%;
@@ -123,20 +85,12 @@ export default {
   z-index: 5;
 }
 
-.bars-text:hover{
-  background-color: rgba(102, 101, 101, 1.0);
-}
-
-.menu-bars{
-  text-align: right;
-}
-
 .drawer-menu-wrapper {
   position: absolute;
   z-index: 10;
   top: 0;
   right: 0;
-  width: 23%;
+  width: 200px;
   height: 100%;
   background-color: rgb(0, 0, 0);
   position: fixed;
@@ -200,34 +154,4 @@ export default {
   cursor: pointer;
 }
 
-.allMenu-responsive{
-  display: none;
-}
-
-@media screen and (max-width: 1000px) {
-  .allMenu{
-    display: none;
-  }
-
-  .allMenu-responsive{
-    display: block;
-  }
-
-  .right-enter, .right-leave-to {
-    transform: translateX(200px) translateX(0px);
-  }
-
-  .menu-button{
-    display: inline-block;
-    cursor: pointer;
-    position: fixed;
-    top: 40%;
-    right: 0.5%;
-    z-index: 5;
-  }
-
-  .drawer-menu-wrapper {
-    width: 200px;
-  }
-}
 </style>

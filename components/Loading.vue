@@ -11,51 +11,50 @@
 
 <style>
 .loading{
-    background-color: black;
-    height: 100vh;
-    text-align: center;
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .loading-text{
-    color:rgb(112, 112, 112);
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-size: 100px;
-    padding-top: 250px;
-    text-align: center;
-    animation-name: frashing;
-    animation-duration:1s;
-    animation-iteration-count:5;
-    animation-delay:0.5s;
+  color:rgb(112, 112, 112);
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: calc(40px + 4vw);
+  animation-name: frashing;
+  animation-duration:1s;
+  animation-iteration-count:5;
+  animation-delay:0.5s;
 }
 
 @keyframes frashing{
-    0%{
-        opacity: 1;
-    }
-    20%{
-        opacity: 0.6;
-    }
-    40%{
-        opacity: 0.2;
-    }
-    50%{
-        opacity: 0;
-    }
-    60%{
-        opacity: 0.2;
-    }
-    80%{
-        opacity: 0.6;
-    }
-    100%{
-        opacity: 1;
-    }
+  0%{
+      opacity: 1;
+  }
+  20%{
+      opacity: 0.6;
+  }
+  40%{
+      opacity: 0.2;
+  }
+  50%{
+      opacity: 0;
+  }
+  60%{
+      opacity: 0.2;
+  }
+  80%{
+      opacity: 0.6;
+  }
+  100%{
+      opacity: 1;
+  }
 }
 
 .loading-img{
-    width: 100px;
-    text-align:center;
-    vertical-align:middle;
-    margin:auto;
+  width: calc(40px + 4vw);
 }
 </style>

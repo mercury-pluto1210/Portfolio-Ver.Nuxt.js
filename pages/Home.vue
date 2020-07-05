@@ -26,16 +26,13 @@ export default {
 }
 
 .home-text{
-  position: absolute;
   color: rgb(10, 238, 200);
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  margin:0;
-  padding:0;
+  position: absolute;
+  left: 0;
+  top: 45%;
+  width: 100%;
+  text-align: center;
   font-family: 'Homemade Apple', cursive;
-  font-size: calc(30px + 2vw);
+  font-size: calc(25px + 3vw);
 }
 </style>
