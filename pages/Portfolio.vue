@@ -3,24 +3,30 @@
     <Menu />
     <div class="portfolio">
       <h1 class="portfolio-title">Portfolio</h1>
-      <div class="my-page">
-        <div class="my-page-text">
-          <p>My Homepage</p>
-          <p>初めて作成したWebサイトです</p>
+      <a href="https://mercury-pluto1210.netlify.app/" class="portfolio-link">
+        <div class="my-page">
+          <div class="my-page-text">
+            <p>My Homepage</p>
+            <p>初めて作成したWebサイトです</p>
+          </div>
         </div>
-      </div>
-      <div class="banmeshi">
-        <div class="banmeshi-text">
-          <p>Banmeshi</p>
-          <p>晩御飯を投稿できるサイトです</p>
+      </a>
+      <a href="https://github.com/mercury-pluto1210/Banmeshi" class="portfolio-link">
+        <div class="banmeshi">
+          <div class="banmeshi-text">
+            <p>Banmeshi</p>
+            <p>晩御飯を投稿できるサイトです</p>
+          </div>
         </div>
-      </div>
-      <div class="calculator">
-        <div class="calculator-text">
-          <p>Calculator</p>
-          <p>大学の授業で作成した電卓です</p>
+      </a>
+      <a href="https://mercury-pluto1210.github.io/Calculator-Ver.JavaScript/" class="portfolio-link">
+        <div class="calculator">
+          <div class="calculator-text">
+            <p>Calculator</p>
+            <p>大学の授業で作成した電卓です</p>
+          </div>
         </div>
-      </div>
+      </a>
       <div class="voice">
         <p>音声投稿サイト</p>
         <p>ハッカソンで作成したサイトです</p>
@@ -52,11 +58,18 @@ export default {
   text-align: center;
 }
 
+.portfolio-link{
+  color: #fff;
+}
+
+.portfolio-link:hover{
+  color: #fff;
+}
+
 .portfolio-title{
   font-size: calc(30px + 8vw);
   font-family: 'Caveat', cursive;
 }
-
 
 .my-page{
   background: url(~assets/img/My-Homepage.jpg);
