@@ -72,7 +72,7 @@ export default {
 }
 
 .my-page{
-  background: url(~assets/img/My-Homepage.jpg);
+  background-image: url("~static/img/My-Homepage.jpg");
   background-size: cover;
   position: relative;
   height: 50vh;
@@ -111,7 +111,7 @@ export default {
 }
 
 .banmeshi{
-  background: url(~assets/img/Banmeshi.jpg);
+  background-image: url("~static/img/Banmeshi.jpg");
   background-size: cover;
   position: relative;
   height: 50vh;
@@ -150,7 +150,7 @@ export default {
 }
 
 .calculator{
-  background: url(~assets/img/Calculator.jpg);
+  background-image: url("~static/img/Calculator.jpg");
   position: relative;
   height: 50vh;
   background-position: 50% 50%;

@@ -72,7 +72,7 @@ export default {
 <style>
 .about{
   background-attachment: fixed;
-  background-image: url(~assets/img/PC-on-table.jpg);
+  background-image: url("~static/img/PC-on-table.jpg");
   background-size: cover;
   color: #fff;
 }

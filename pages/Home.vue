@@ -20,7 +20,7 @@ export default {
 <style>
 .home{
   position: relative;
-  background-image: url(~assets/img/PC-on-table.jpg);
+  background-image: url("~static/img/PC-on-table.jpg");
   background-size: cover;
   height: 100vh;
 }
